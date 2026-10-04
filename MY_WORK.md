@@ -233,47 +233,70 @@
 
 ## Question 1: What did you learn about multithreading?
 
+
 > 💡 **TIP:** Talk about thread creation (`Runnable`, `Thread.start()`), waiting with `Thread.join()`, simulating work with `Thread.sleep()`, and what surprised you.
 
-**Your Answer:** *(5-7 sentences)*
+*Your Answer:*I found out that multithreading enables a program to carry out more than one task at the same time.
+I discovered that it is possible to create a thread by using Runnable and then start it with Thread.start().
+I also found out that Thread.join() causes one thread to wait until another thread has finished.
+The method Thread.sleep() enabled me to gain an understanding of how it's possible to simulate work or delays in a thread.
+I found out that threads can affect the order in which the messages appear in the output.
+It helped me to see how multithreaded operations are used in operating systems.
 
-[Write your answer here.]
+
 
 ## Question 2: What was the most challenging part of this assignment?
 
 > 💡 **TIP:** Pick **one** specific challenge (understanding the code, one of the features, Git, the video) and say *why* it was hard.
 
-**Your Answer:** *(5-7 sentences)*
+*Your Answer:*The hardest aspect was getting to know the SchedulerSimulation.java code that was already there.
+Before making any changes, there were a great many methods and components of the program that I needed to understand.
+I had just as much trouble working out how the various processes go through the queue.
+At times my code would run but the result was not the one I had expected.
+A further difficulty was ensuring that my modifications did not impact the other features.
+I then realised that it was necessary to understand the existing code before adding new code.
 
-[Write your answer here.]
+
 
 ## Question 3: How did you overcome the challenges you faced?
 
 > 💡 **TIP:** Describe your method: reading documentation, adding `System.out.println` to debug, re-reading the README, testing after each small change, asking for help.
 
-**Your Answer:** *(5-7 sentences)*
+*Your Answer:*I dealt with the problems by carefully reading the README and checking the code.
+I carried out the work on the features by making them one small change at a time.
+To see what was going on inside the program I used System.out.println.
+I also carried out the program following my modifications to check whether the output was correct.
+If I didn't understand something, I would go back and read the relevant section of the code once more.
+By testing after each change I was able to spot any mistakes and correct them more easily.
 
-[Write your answer here.]
+
 
 ## Question 4: How can you apply multithreading concepts in real-world applications?
 
 > 💡 **TIP:** Use real applications you know (web browser, game, mobile app, music player) and connect each one to what you built here.
 
-**Your Answer:** *(5-7 sentences)*
+*Your Answer:*Multithreaded techniques are used in a great many real-world applications.
+For instance, a web browser can deal with various tasks at the same time by using different threads.
+A music application is capable of playing music while the user is carrying out other tasks within the application.
+Games may use threads to carry out graphics, sounds, and other tasks simultaneously.
+This assignment enabled me to see how threads can make applications more responsive and efficient.
 
-[Write your answer here.]
+
+
+
 
 ### Optional: What would you like to learn more about?
 
-[Any topics related to threading or operating systems that you're curious about?]
+I want to find out further information regarding thread scheduling and the way that operating systems handle threads.
 
 ### Optional: How confident do you feel about multithreading concepts now?
 
-[Beginner / Intermediate / Confident. What do you understand well? What needs more practice?]
+I am now more confident in my ability to multithread having finished this assignment, but I will still need some more practice.
 
 ### Optional: Feedback on the assignment
 
-[Any comments? Was it helpful? Too easy or hard? Suggestions?]
+The assignment was helpful as it enabled me to understand how threads work by actually writing code.
+At first it was difficult, but testing the code enabled me to get a better understanding of the concepts.
 
 ---
 
