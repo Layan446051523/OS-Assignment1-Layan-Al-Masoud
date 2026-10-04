@@ -30,8 +30,11 @@ class Process implements Runnable {
     private int timeQuantum; // Time slice (time quantum) allowed per CPU access (in milliseconds)
     private int remainingTime; // Time left for the process to finish its execution
     private int priority; // 1 Feature - Process Priority
+// 3 Feature: Track waiting time
+private long creationTime;
+private long waitingTime;
+private long readyQueueTime;
     // Constructor to initialize the process with name, burst time, and time quantum
-
     public Process(String name, int burstTime, int timeQuantum) {
         this.name = name;
         this.burstTime = burstTime;
@@ -39,7 +42,18 @@ class Process implements Runnable {
         this.remainingTime = burstTime; // Initially, remaining time is equal to the burst time
         // 1 Feature: Generate a random priority from 1 to 10
         this.priority = new Random().nextInt(10) + 1;
+        // 3 Feature: Record creation time and initialize waiting time
+        this.creationTime = System.currentTimeMillis();
+        this.waitingTime = 0;
     }
+    // 3 Feature: Record the time when the process enters the ready queue
+public void enterReadyQueue() {
+    readyQueueTime = System.currentTimeMillis();
+}
+    // 3 Feature: Calculate the time spent waiting in the ready queue
+public void calculateWaitingTime() {
+    waitingTime += System.currentTimeMillis() - readyQueueTime;
+}
 
     // This method will be called when the thread for this process is started
     @Override
@@ -75,6 +89,9 @@ class Process implements Runnable {
         }
 
         remainingTime -= runTime; // Deduct the run time from the remaining time
+
+        // 3 Feature: Add the time spent waiting in the ready queue
+        waitingTime += System.currentTimeMillis() - readyQueueTime;
         int overallProgress = (int) (((double) (burstTime - remainingTime) / burstTime) * 100);
         String overallProgressBar = createProgressBar(overallProgress, 20);
 
@@ -150,6 +167,10 @@ class Process implements Runnable {
     public boolean isFinished() {
         return remainingTime <= 0;
     }
+    // 3 Feature: Return the waiting time
+     public long getWaitingTime() {
+     return waitingTime;
+}
 }
 
 public class SchedulerSimulation {
@@ -252,6 +273,9 @@ static int contextSwitchCount = 0;
             System.out.println(Colors.BRIGHT_WHITE + "]" + Colors.RESET);
             System.out.println(Colors.BOLD + Colors.MAGENTA + "└" + "─".repeat(79) + Colors.RESET + "\n");
 
+            // 3 Feature: Calculate the time spent waiting in the ready queue
+            Process currentProcess = processMap.get(currentThread);
+            currentProcess.calculateWaitingTime();
             // Start the thread, which will run the process for one time quantum
             currentThread.start();
 
@@ -298,6 +322,13 @@ static int contextSwitchCount = 0;
 System.out.println(Colors.BOLD + Colors.BRIGHT_YELLOW +
                   "Total context switches: " + contextSwitchCount +
                   Colors.RESET);
+System.out.println("\n Process Summary ");           
+
+for (Process p : processMap.values()) {
+    System.out.println(p.getName() +
+            " | Burst: " + p.getBurstTime() +
+            " | Waiting: " + p.getWaitingTime() + "ms");
+}
     }
 
     // Method to add a process to the queue and map, while printing a "ready"
@@ -313,6 +344,8 @@ System.out.println(Colors.BOLD + Colors.BRIGHT_YELLOW +
         // Map the thread to the process, so we can track the process associated with
         // each thread
         processMap.put(thread, process);
+        // 3 Feature: Record ready queue entry time
+        process.enterReadyQueue();
 
         // Print a message indicating the process has entered the ready queue
         // 1 Feature: Display the process priority when it enters the ready queue
