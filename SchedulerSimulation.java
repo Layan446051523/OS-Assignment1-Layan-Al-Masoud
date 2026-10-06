@@ -322,12 +322,15 @@ static int contextSwitchCount = 0;
 System.out.println(Colors.BOLD + Colors.BRIGHT_YELLOW +
                   "Total context switches: " + contextSwitchCount +
                   Colors.RESET);
-System.out.println("\n Process Summary ");           
-
-for (Process p : processMap.values()) {
-    System.out.println(p.getName() +
-            " | Burst: " + p.getBurstTime() +
-            " | Waiting: " + p.getWaitingTime() + "ms");
+System.out.println("\n--- Process Summary ---");
+System.out.println("Process Name | Burst Time | Waiting Time | Turnaround Time");
+java.util.Set<Process> uniqueProcesses = new java.util.LinkedHashSet<>(processMap.values());
+for (Process p : uniqueProcesses) {
+long turnaroundTime = p.getWaitingTime() + p.getBurstTime();
+System.out.println(p.getName() +
+        " | Burst: " + p.getBurstTime() +
+        " | Waiting: " + p.getWaitingTime() + "ms" +
+        " | Turnaround: " + turnaroundTime + "ms");
 }
     }
 
