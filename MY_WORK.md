@@ -129,7 +129,7 @@
 
 ## Your Development Log
 
-### Entry 1 - [ October 3, 2026]
+### Entry 1 - [ October 2, 2026]
 **What I did**:
 I carried out work on the Java Scheduler Simulation and attempted to run the program in VS Code.
 **Details**:
@@ -139,10 +139,10 @@ Initially, I had difficulties in running the program and understanding certain s
 **Solution**:
 I went through the code step by step and retested the program after carrying out the required changes.
 **Time spent**:
-
+2 hours
 ---
 
-### Entry 2 - [October 4, 2026]
+### Entry 2 - [October 3, 2026]
 **What I did**:
 I finished setting up GitHub and put the necessary student ID into the Java program.
 **Details**:
@@ -152,10 +152,10 @@ The greatest difficulty was getting to know the existing code before carrying ou
 **Solution**:
 I carefully read the code and instead made only small changes.
 **Time spent**:
-
+2 hours
 ---
 
-### Entry 3 - October 4, 2026]
+### Entry 3 [ October 4, 2026]
 **What I did**:
 I carried out the implementation of the Process Priority and Context Switch Counter features.
 **Details**:
@@ -163,65 +163,51 @@ When a process enters the ready queue I displayed a random priority between 1 an
 **Challenges**:
 I had to ensure that the priority was shown without affecting the FIFO order of the ready queue.
 **Solution**:
-I used the original queue structure and is all I did was add the priority information to the output.
+I kept the original queue structure and only added the priority information to the output.
 **Time spent**:
-
+3 hours
 ---
 
-### Entry 4 - [October 4, 2026]
+### Entry 4 - [October 5, 2026]
 **What I did**:
 I have carried out the implementation of the Waiting Time Tracking feature.
-
 **Details**:
 I calculated the time that the processes spent waiting in the ready queue by using System.currentTimeMillis(). I also included a final summary which showed the waiting time and the turnaround time.
 **Challenges**:
 The first summary indicated that there were duplicate processes since a new thread was generated each time a process was re-queued.
-
 **Solution**:
 I altered the final summary so that unique Process objects would be used, thereby ensuring that each process is included only once.
-
 **Time spent**:
-
+2 hours
 ---
 
-### Entry 5 - [Date and Time]
+### Entry 5 - [ October 6, 2026]
 **What I did**:
-
+I worked on completing the MY_WORK.md documentation.
 **Details**:
-
+ I reviewed the development log, reflection questions, and technical answers. I also checked my code and output examples to make sure the answers matched my work.
 **Challenges**:
-
+ I needed to make sure that the documentation was clear and that the examples came from my own program output.
 **Solution**:
-
+ I reviewed my code and previous output and corrected the documentation where needed.
 **Time spent**:
-
+2 hours
 ---
 
-### Entry 6 - [Optional - Date and Time]
-**What I did**:
 
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
-
----
 
 ## Development Log Summary
 
 > 💡 **TIP:** Fill this in **last**, after all entries are written.
 
-**Total time spent on assignment**: [X hours]
-
+ 
+Total time spent on assignment: 11 hours
 **Most challenging part**:
-
+Understanding the SchedulerSimulation.java code and the way in which the processes move through the ready queue.
 **Most interesting learning**:
-
+Learning to understand how threads, time quanta, context switches, and the ready queue function together in the Round-Robin simulation.
 **What I would do differently next time**:
-
+I should take more time to understand the existing code before making any changes and begin testing each feature earlier.
 ---
 
 # Part B: Reflection (0.5 mark)
@@ -329,7 +315,7 @@ At first it was difficult, but testing the code enabled me to get a better under
 >
 > 💡 **TIP:** Pick a process with a large burst time (e.g., more than 2 × time quantum) and count how many "added to ready queue" lines it has after the first one. Search your console for its name (e.g., `P3`).
 
-**Your Answer:If a process does not complete within its time quantum it is returned to the ready queue. In my output P3 has a burst time of 10472ms and the time quantum is 5000ms; it was re-queued twice before it finished since 5472ms and then 472ms still remained. It is necessary to re.queue the process since this allows other processes to use the CPU and thus makes the Round-Robin algorithm fair.
+**Your Answer:If a process does not complete within its time quantum it is returned to the ready queue. In my output P3 has a burst time of 10472ms and the time quantum is 5000ms; it was re-queued twice before it finished since 5472ms and then 472ms still remained. It is necessary to re-queue the process since this allows other processes to use the CPU and thus makes the Round-Robin algorithm fair.
 
 Example from my output:
 ▶️ P3 executing quantum [5000ms]
@@ -378,15 +364,13 @@ Since P3 did not complete during its first two 5000ms time slices, it was put ba
 ### Example 1 (operating-system level): CPU Scheduling
 
 **Description**:
-An operating system may employ Round-Robin scheduling in order to share CPU time among a number of processes that are running. Each process is given a time quantum before another process gets a turn and the process that we are looking at in our simulation is one of the running processes in the operating system.U
-
+An operating system may employ Round-Robin scheduling in order to share CPU time among a number of processes that are running. Each process is given a time quantum before another process gets a turn and the process that we are looking at in our simulation is one of the running processes in the operating system
 **Why Round-Robin works well here**:
 The reason why Round-Robin works well in this case is that it ensures fairness since each process is given a turn. It also enhances responsiveness because it prevents any one process from using the CPU for an extended period. A context switch occurs when the CPU shifts from one process to another.
 ### Example 2: Interactive Application
 
 **Description**:
 A multi-threaded interactive program can make use of Round-Robin scheduling in order to allocate a fair amount of CPU time to various threads; for instance, different threads can be responsible for dealing with user input, carrying out background work, and attending to other tasks. The threads are similar to the processes in our simulation.
-
 
 **Why Round-Robin works well here**:
 The reason Round-Robin works well in this situation is that it helps maintain the responsiveness of the application since each thread is given a time quantum. It also ensures fairness because no single thread can occupy the CPU continuously. This is the same as in our simulation, where each process takes a turn in the ready queue.
