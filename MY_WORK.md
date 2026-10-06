@@ -29,11 +29,11 @@
 
 | Field | Your Answer |
 |-------|-------------|
-| **Full Name** | [Write your full name here] |
-| **Student ID** | [Write your student ID here] |
-| **University Email** | [yourid]@std.psau.edu.sa |
-| **GitHub Username** | [your-github-username] |
-| **Repository Link** | [Paste your repository link here] |
+| **Full Name** |Layan Khalid Al-Masoud|
+| **Student ID** | 446051523|
+| **University Email** |446051523@std.psau.edu.sa |
+| **GitHub Username** |Layan446051523|
+| **Repository Link** |(https://github.com/Layan446051523/OS-Assignment1-Layan-Al-Masoud.git)|
  
 ---
 
@@ -129,53 +129,56 @@
 
 ## Your Development Log
 
-### Entry 1 - [Date and Time]
+### Entry 1 - [ October 3, 2026]
 **What I did**:
-
+I carried out work on the Java Scheduler Simulation and attempted to run the program in VS Code.
 **Details**:
-
+I looked at the code that was already there and attempted to get an understanding of how the processes, threads, and ready queue function.
 **Challenges**:
-
+Initially, I had difficulties in running the program and understanding certain sections of the existing code.
 **Solution**:
-
+I went through the code step by step and retested the program after carrying out the required changes.
 **Time spent**:
 
 ---
 
-### Entry 2 - [Date and Time]
+### Entry 2 - [October 4, 2026]
 **What I did**:
-
+I finished setting up GitHub and put the necessary student ID into the Java program.
 **Details**:
-
+I also began by implementing the features that were required, one at a time, and made separate commits for each of my changes.
 **Challenges**:
-
+The greatest difficulty was getting to know the existing code before carrying out the addition of new features.
 **Solution**:
-
+I carefully read the code and instead made only small changes.
 **Time spent**:
 
 ---
 
-### Entry 3 - [Date and Time]
+### Entry 3 - October 4, 2026]
 **What I did**:
-
+I carried out the implementation of the Process Priority and Context Switch Counter features.
 **Details**:
-
+When a process enters the ready queue I displayed a random priority between 1 and 10 and also included a counter which increases each time a process starts to run.
 **Challenges**:
-
+I had to ensure that the priority was shown without affecting the FIFO order of the ready queue.
 **Solution**:
-
+I used the original queue structure and is all I did was add the priority information to the output.
 **Time spent**:
 
 ---
 
-### Entry 4 - [Date and Time]
+### Entry 4 - [October 4, 2026]
 **What I did**:
+I have carried out the implementation of the Waiting Time Tracking feature.
 
 **Details**:
-
+I calculated the time that the processes spent waiting in the ready queue by using System.currentTimeMillis(). I also included a final summary which showed the waiting time and the turnaround time.
 **Challenges**:
+The first summary indicated that there were duplicate processes since a new thread was generated each time a process was re-queued.
 
 **Solution**:
+I altered the final summary so that unique Process objects would be used, thereby ensuring that each process is included only once.
 
 **Time spent**:
 
