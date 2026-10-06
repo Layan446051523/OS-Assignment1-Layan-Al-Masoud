@@ -129,7 +129,7 @@
 
 ## Your Development Log
 
-### Entry 1 - [ October 2, 2026]
+### Entry 1 - [ October 2, 2026, 8:00 PM]
 **What I did**:
 I carried out work on the Java Scheduler Simulation and attempted to run the program in VS Code.
 **Details**:
@@ -142,7 +142,7 @@ I went through the code step by step and retested the program after carrying out
 2 hours
 ---
 
-### Entry 2 - [October 3, 2026]
+### Entry 2 - [October 3, 2026,12:30 AM]
 **What I did**:
 I finished setting up GitHub and put the necessary student ID into the Java program.
 **Details**:
@@ -155,7 +155,7 @@ I carefully read the code and instead made only small changes.
 2 hours
 ---
 
-### Entry 3 [ October 4, 2026]
+### Entry 3 [ October 4, 2026, 4:00 PM]
 **What I did**:
 I carried out the implementation of the Process Priority and Context Switch Counter features.
 **Details**:
@@ -168,7 +168,7 @@ I kept the original queue structure and only added the priority information to t
 3 hours
 ---
 
-### Entry 4 - [October 5, 2026]
+### Entry 4 - [October 5, 2026, 8:00 PM]
 **What I did**:
 I have carried out the implementation of the Waiting Time Tracking feature.
 **Details**:
@@ -181,7 +181,7 @@ I altered the final summary so that unique Process objects would be used, thereb
 2 hours
 ---
 
-### Entry 5 - [ October 6, 2026]
+### Entry 5 - [ October 6, 2026,6:30 PM]
 **What I did**:
 I worked on completing the MY_WORK.md documentation.
 **Details**:
